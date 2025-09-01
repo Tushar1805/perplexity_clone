@@ -6,15 +6,13 @@ final ThemeData primaryTheme = ThemeData(
   scaffoldBackgroundColor: Colors.white,
   // unselectedWidgetColor: Colors.white,
   appBarTheme: const AppBarTheme(
-    titleTextStyle: TextStyle(color: Colors.white),
-    backgroundColor: primaryColor,
-  ),
+      titleTextStyle: TextStyle(color: Colors.white), backgroundColor: AppColors.footerGrey),
   cardTheme: const CardThemeData(color: Colors.white),
-  bottomNavigationBarTheme:const  BottomNavigationBarThemeData(
-    backgroundColor: Colors.white,
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+    backgroundColor: AppColors.footerGrey,
   ),
   textSelectionTheme: const TextSelectionThemeData(
-    cursorColor: primaryColor,
+    cursorColor: AppColors.background,
   ),
   buttonTheme: ButtonThemeData(
     textTheme: ButtonTextTheme.primary,
@@ -25,11 +23,11 @@ final ThemeData primaryTheme = ThemeData(
     ),
   ),
   colorScheme: ColorScheme(
-    tertiaryContainer: primaryColor,
+    tertiaryContainer: AppColors.background,
     brightness: Brightness.light,
-    primary: primaryColor,
+    primary: AppColors.background,
     onPrimary: Colors.white,
-    secondary: secondaryColor,
+    secondary: AppColors.searchBar,
     onSecondary: Colors.white,
     error: Colors.red,
     onError: Colors.red,
@@ -93,20 +91,20 @@ final ThemeData primaryTheme = ThemeData(
 );
 
 final ThemeData darkTheme = ThemeData(
-  scaffoldBackgroundColor: Colors.black38,
+  scaffoldBackgroundColor: AppColors.background,
   unselectedWidgetColor: Colors.white,
   appBarTheme: const AppBarTheme(
     titleTextStyle: TextStyle(color: Colors.white),
-    backgroundColor: Colors.black,
+    backgroundColor: AppColors.background,
   ),
   cardTheme: const CardThemeData(
-    //color: cardColor,
-    color: Colors.white,
+    color: AppColors.cardColor,
   ),
   textSelectionTheme: const TextSelectionThemeData(
     cursorColor: Colors.white,
   ),
-  bottomNavigationBarTheme: const BottomNavigationBarThemeData(backgroundColor: Colors.black),
+  bottomNavigationBarTheme:
+      const BottomNavigationBarThemeData(backgroundColor: AppColors.background),
   buttonTheme: ButtonThemeData(
     textTheme: ButtonTextTheme.primary,
     minWidth: double.infinity,
@@ -116,21 +114,21 @@ final ThemeData darkTheme = ThemeData(
     ),
   ),
   dialogTheme: const DialogThemeData(
-    backgroundColor: Colors.black,
+    backgroundColor: AppColors.background,
     elevation: 2,
   ),
   colorScheme: ColorScheme(
     tertiaryContainer: Colors.white,
     brightness: Brightness.dark,
-    primary: Colors.black,
+    primary: AppColors.background,
     onPrimary: Colors.white,
-    secondary: Colors.black,
+    secondary: AppColors.cardColor,
     onSecondary: Colors.white,
     error: Colors.red,
     onError: Colors.red,
-    surface: Colors.black38,
-    onSurface: Colors.black,
-    shadow: Colors.black.withAlpha(229),
+    surface: AppColors.cardColor,
+    onSurface: AppColors.background,
+    shadow: AppColors.background.withAlpha(229),
   ),
   textTheme: TextTheme(
     bodyLarge: GoogleFonts.lato(

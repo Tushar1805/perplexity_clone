@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.flutter_project_template"
+    namespace = "com.perplexity_clone.app"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 

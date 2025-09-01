@@ -92,7 +92,7 @@ void showToast({
     padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 12.0),
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(8.0),
-      color: secondaryColor,
+      color: AppColors.background,
     ),
     child: Row(
       mainAxisSize: MainAxisSize.min,
@@ -100,7 +100,7 @@ void showToast({
         CircleAvatar(
           radius: 12,
           child: Image.asset(
-           AppImages.appLogoIcon,
+            AppImages.appLogoIcon,
             width: 24,
             height: 24,
           ),
