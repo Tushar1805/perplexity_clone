@@ -23,7 +23,7 @@ Future<void> main() async {
       tools: const [
         ...DevicePreview.defaultTools,
       ],
-      builder: (context) => const FlutterTemplate(),
+      builder: (context) => const PerplexityClone(),
     ),
   );
   SystemChrome.setSystemUIOverlayStyle(
@@ -35,14 +35,14 @@ Future<void> main() async {
   );
 }
 
-class FlutterTemplate extends StatefulWidget {
-  const FlutterTemplate({super.key});
+class PerplexityClone extends StatefulWidget {
+  const PerplexityClone({super.key});
 
   @override
-  State<FlutterTemplate> createState() => _FlutterTemplateState();
+  State<PerplexityClone> createState() => _PerplexityCloneState();
 }
 
-class _FlutterTemplateState extends State<FlutterTemplate> {
+class _PerplexityCloneState extends State<PerplexityClone> {
   late final ThemeCubit themeCubit;
   late final LanguageCubit languageCubit;
 

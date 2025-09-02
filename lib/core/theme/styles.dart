@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_project_template/core/resources/app_colors.dart';
+import 'package:perplexity_clone/core/resources/app_colors.dart';
 
 class TextStyles {
   static TextStyle textStyle_11_400 =

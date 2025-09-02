@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project_template/core/resources/app_colors.dart';
+import 'package:perplexity_clone/core/resources/app_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final ThemeData primaryTheme = ThemeData(
@@ -101,7 +101,8 @@ final ThemeData darkTheme = ThemeData(
     color: AppColors.cardColor,
   ),
   textSelectionTheme: const TextSelectionThemeData(
-    cursorColor: Colors.white,
+    cursorColor: Colors.blueAccent,
+    selectionColor: Colors.blueGrey,
   ),
   bottomNavigationBarTheme:
       const BottomNavigationBarThemeData(backgroundColor: AppColors.background),
@@ -131,42 +132,49 @@ final ThemeData darkTheme = ThemeData(
     shadow: AppColors.background.withAlpha(229),
   ),
   textTheme: TextTheme(
-    bodyLarge: GoogleFonts.lato(
+    bodyLarge: GoogleFonts.ibmPlexMono(
       fontSize: 19,
       fontWeight: FontWeight.w700,
       color: Colors.white,
     ),
-    bodyMedium: GoogleFonts.lato(
+    bodyMedium: GoogleFonts.ibmPlexMono(
       fontSize: 15,
       fontWeight: FontWeight.w600,
       color: Colors.white,
     ),
-    bodySmall: GoogleFonts.lato(
+    bodySmall: GoogleFonts.ibmPlexMono(
       fontSize: 11,
       fontWeight: FontWeight.w400,
       color: Colors.white,
     ),
-    labelLarge: GoogleFonts.lato(
+    labelLarge: GoogleFonts.ibmPlexMono(
       fontSize: 20,
       fontWeight: FontWeight.w600,
       color: Colors.white,
     ),
-    labelMedium: GoogleFonts.lato(
+    labelMedium: GoogleFonts.ibmPlexMono(
       fontSize: 15,
       fontWeight: FontWeight.w500,
       color: Colors.black,
     ),
-    labelSmall: GoogleFonts.lato(
+    labelSmall: GoogleFonts.ibmPlexMono(
       fontSize: 11,
       fontWeight: FontWeight.w500,
       color: Colors.white,
     ),
-    displayMedium: GoogleFonts.lato(
+    displayLarge: GoogleFonts.ibmPlexMono(
+      fontSize: 40,
+      fontWeight: FontWeight.w400,
+      height: 1.2,
+      letterSpacing: -0.5,
+      color: Colors.white,
+    ),
+    displayMedium: GoogleFonts.ibmPlexMono(
       fontSize: 15,
       fontWeight: FontWeight.w400,
       color: Colors.white,
     ),
-    displaySmall: GoogleFonts.lato(
+    displaySmall: GoogleFonts.ibmPlexMono(
       fontSize: 14,
       fontWeight: FontWeight.w400,
       color: Colors.white,

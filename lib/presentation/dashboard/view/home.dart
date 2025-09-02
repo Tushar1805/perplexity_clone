@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project_template/l10n/app_localizations.dart';
+import 'package:perplexity_clone/core/resources/app_colors.dart';
+import 'package:perplexity_clone/presentation/dashboard/widgets/search_section.dart';
+// import 'package:perplexity_clone/l10n/app_localizations.dart';
+import 'package:perplexity_clone/presentation/dashboard/widgets/sidenav_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -11,11 +14,86 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    final locale = AppLocalizations.of(context)!;
+    // final locale = AppLocalizations.of(context)!;
+    final theme = Theme.of(context).textTheme;
     return Scaffold(
-      body: Center(
-        child: Text(locale.homeString),
-      ),
-    );
+        body: Row(
+      children: [
+        // sidenav bar
+        SideBar(),
+        Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // search section
+              Expanded(child: SearchSection()),
+              // footer
+              Container(
+                padding: EdgeInsets.symmetric(vertical: 16),
+                child: Wrap(
+                  alignment: WrapAlignment.center,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 12),
+                      child: Text(
+                        'Pro',
+                        style: theme.displaySmall?.copyWith(
+                          color: AppColors.footerGrey,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 12),
+                      child: Text(
+                        'Enterprise',
+                        style: theme.displaySmall?.copyWith(
+                          color: AppColors.footerGrey,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 12),
+                      child: Text(
+                        'Store',
+                        style: theme.displaySmall?.copyWith(
+                          color: AppColors.footerGrey,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 12),
+                      child: Text(
+                        'Blog',
+                        style: theme.displaySmall?.copyWith(
+                          color: AppColors.footerGrey,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 12),
+                      child: Text(
+                        'Careers',
+                        style: theme.displaySmall?.copyWith(
+                          color: AppColors.footerGrey,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 12),
+                      child: Text(
+                        'English (English)',
+                        style: theme.displaySmall?.copyWith(
+                          color: AppColors.footerGrey,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+        )
+      ],
+    ));
   }
 }
