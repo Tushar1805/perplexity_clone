@@ -28,5 +28,5 @@ async def chat_endpoint(body: ChatBody):
     # generate the response using LLM
     response = await llm_service.generate_response(body.query, sorted_results)
 
-    print(f"Response: {response}")
+    print(f"Response: {sorted_results}")
     return response
