@@ -137,27 +137,27 @@ final ThemeData darkTheme = ThemeData(
       fontWeight: FontWeight.w700,
       color: Colors.white,
     ),
-    bodyMedium: GoogleFonts.ibmPlexMono(
+    bodyMedium: GoogleFonts.inter(
       fontSize: 15,
       fontWeight: FontWeight.w600,
       color: Colors.white,
     ),
-    bodySmall: GoogleFonts.ibmPlexMono(
+    bodySmall: GoogleFonts.inter(
       fontSize: 11,
       fontWeight: FontWeight.w400,
       color: Colors.white,
     ),
-    labelLarge: GoogleFonts.ibmPlexMono(
+    labelLarge: GoogleFonts.inter(
       fontSize: 20,
       fontWeight: FontWeight.w600,
       color: Colors.white,
     ),
-    labelMedium: GoogleFonts.ibmPlexMono(
+    labelMedium: GoogleFonts.inter(
       fontSize: 15,
       fontWeight: FontWeight.w500,
       color: Colors.black,
     ),
-    labelSmall: GoogleFonts.ibmPlexMono(
+    labelSmall: GoogleFonts.inter(
       fontSize: 11,
       fontWeight: FontWeight.w500,
       color: Colors.white,
@@ -169,12 +169,12 @@ final ThemeData darkTheme = ThemeData(
       letterSpacing: -0.5,
       color: Colors.white,
     ),
-    displayMedium: GoogleFonts.ibmPlexMono(
+    displayMedium: GoogleFonts.inter(
       fontSize: 15,
       fontWeight: FontWeight.w400,
       color: Colors.white,
     ),
-    displaySmall: GoogleFonts.ibmPlexMono(
+    displaySmall: GoogleFonts.inter(
       fontSize: 14,
       fontWeight: FontWeight.w400,
       color: Colors.white,

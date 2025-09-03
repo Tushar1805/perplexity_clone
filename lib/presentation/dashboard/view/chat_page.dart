@@ -16,59 +16,60 @@ class ChatPage extends StatefulWidget {
 }
 
 class _ChatPageState extends State<ChatPage> {
-  // StreamBuilder(
-  //                 stream: ChatWebService().contentStream,
-  //                 builder: (context, snapshot) {
-  //                   if (snapshot.connectionState == ConnectionState.waiting) {
-  //                     return const LoadingWithoutText();
-  //                   }
-
-  //                   fullResponse += snapshot.data?['data'] ?? '';
-
-  //                   return Text(fullResponse);
-  //                 }),
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
 
-    return Scaffold(
-      body: Row(
-        children: [
-          SideBar(),
-          const SizedBox(
-            width: 100,
-          ),
-          Expanded(
-            child: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.all(24.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      widget.question ?? "",
-                      style: theme.displayLarge,
-                    ),
-                    const SizedBox(
-                      height: 24,
-                    ),
-                    // sources
-                    SourcesSection(),
-                    const SizedBox(
-                      height: 24,
-                    ),
-                    // answers
-                    AnswerSection()
-                  ],
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth > 800) {
+          // 👉 Web / Desktop layout
+          return Scaffold(
+            body: Row(
+              children: [
+                const SideBar(),
+                const SizedBox(width: 100),
+                Expanded(
+                  child: _buildMainContent(theme),
                 ),
-              ),
+                const Placeholder(
+                  strokeWidth: 0,
+                  color: AppColors.background,
+                ),
+              ],
             ),
-          ),
-          Placeholder(
-            strokeWidth: 0,
-            color: AppColors.background,
-          )
-        ],
+          );
+        } else {
+          // 👉 Mobile / Tablet layout
+          return Scaffold(
+            appBar: AppBar(
+              title: const Text("Chat"),
+            ),
+            drawer: const SideBar(), // Sidebar as drawer
+            body: _buildMainContent(theme),
+          );
+        }
+      },
+    );
+  }
+
+  Widget _buildMainContent(TextTheme theme) {
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              widget.question ?? "",
+              style: theme.displayLarge,
+            ),
+            const SizedBox(height: 24),
+            const SourcesSection(),
+            const SizedBox(height: 24),
+            const AnswerSection(),
+          ],
+        ),
       ),
     );
   }
