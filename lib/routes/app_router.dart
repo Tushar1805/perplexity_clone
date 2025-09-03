@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:perplexity_clone/presentation/dashboard/view/chat_page.dart';
 import '../presentation/auth/view/splash_screen.dart';
 import '../presentation/dashboard/view/home.dart';
 import 'app_routes.dart';
@@ -45,6 +46,19 @@ final GoRouter router = GoRouter(
         return slideTransitionPage(
           key: state.pageKey,
           child: HomeScreen(),
+        );
+      },
+    ),
+    GoRoute(
+      name: chatPage,
+      path: chatPage,
+      pageBuilder: (final context, final state) {
+        final params = state.extra as Map<String, dynamic>?;
+        return slideTransitionPage(
+          key: state.pageKey,
+          child: ChatPage(
+            question: params?['question'] as String?,
+          ),
         );
       },
     ),

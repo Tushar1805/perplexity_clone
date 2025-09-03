@@ -3,6 +3,7 @@ import 'package:perplexity_clone/core/resources/app_colors.dart';
 import 'package:perplexity_clone/presentation/dashboard/widgets/search_section.dart';
 // import 'package:perplexity_clone/l10n/app_localizations.dart';
 import 'package:perplexity_clone/presentation/dashboard/widgets/sidenav_bar.dart';
+import 'package:perplexity_clone/services/chat_web_service.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,6 +13,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  String fullResponse = "";
+  @override
+  void initState() {
+    super.initState();
+    ChatWebService().connect();
+  }
+
   @override
   Widget build(BuildContext context) {
     // final locale = AppLocalizations.of(context)!;
@@ -27,6 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               // search section
               Expanded(child: SearchSection()),
+
               // footer
               Container(
                 padding: EdgeInsets.symmetric(vertical: 16),

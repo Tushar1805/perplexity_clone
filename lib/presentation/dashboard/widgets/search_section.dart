@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:perplexity_clone/core/resources/app_colors.dart';
 import 'package:perplexity_clone/presentation/dashboard/widgets/search_bar_button.dart';
+import 'package:perplexity_clone/routes/app_routes.dart';
+import 'package:perplexity_clone/services/chat_web_service.dart';
 
 class SearchSection extends StatefulWidget {
   const SearchSection({super.key});
@@ -10,6 +13,14 @@ class SearchSection extends StatefulWidget {
 }
 
 class _SearchSectionState extends State<SearchSection> {
+  final queryController = TextEditingController();
+
+  @override
+  void dispose() {
+    queryController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
@@ -35,6 +46,7 @@ class _SearchSectionState extends State<SearchSection> {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: TextField(
+                  controller: queryController,
                   style: theme.bodyMedium,
                   decoration: InputDecoration(
                       hintText: "Search anything...",
@@ -60,14 +72,25 @@ class _SearchSectionState extends State<SearchSection> {
                       text: 'Attach',
                     ),
                     const Spacer(),
-                    Container(
-                      padding: const EdgeInsets.all(9),
-                      decoration: BoxDecoration(
-                          color: AppColors.submitButton, borderRadius: BorderRadius.circular(40)),
-                      child: const Icon(
-                        Icons.arrow_forward,
-                        color: AppColors.background,
-                        size: 16,
+                    GestureDetector(
+                      onTap: () {
+                        ChatWebService().chat(queryController.text.trim());
+                        context.pushNamed(
+                          chatPage,
+                          extra: {
+                            "question": queryController.text.trim(),
+                          },
+                        );
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(9),
+                        decoration: BoxDecoration(
+                            color: AppColors.submitButton, borderRadius: BorderRadius.circular(40)),
+                        child: const Icon(
+                          Icons.arrow_forward,
+                          color: AppColors.background,
+                          size: 16,
+                        ),
                       ),
                     )
                   ],
