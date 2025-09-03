@@ -20,6 +20,8 @@ class ChatWebService {
   void connect() {
     _socket = WebSocket(Uri.parse("ws://localhost:8000/ws/chat"));
 
+    customPrint("Web Socket connection: $_socket");
+
     _socket!.messages.listen((message) {
       final data = json.decode(message);
       if (data['type'] == 'search_result') {

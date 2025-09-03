@@ -4,31 +4,34 @@ class NavBarWidget extends StatelessWidget {
   const NavBarWidget({
     super.key,
     required this.icon,
-    required this.isCollapased,
+    required this.isCollapsed,
     required this.title,
   });
 
   final IconData icon;
-  final bool isCollapased;
+  final bool isCollapsed;
   final String title;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 14, horizontal: 14),
+      margin: const EdgeInsets.symmetric(vertical: 14, horizontal: 14),
       child: Row(
-        mainAxisAlignment: isCollapased ? MainAxisAlignment.center : MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min, //  Prevents Row from forcing full width
+        mainAxisAlignment: isCollapsed ? MainAxisAlignment.center : MainAxisAlignment.start,
         children: [
-          Icon(
-            icon,
-            size: 22,
-          ),
-          isCollapased
-              ? SizedBox.shrink()
-              : Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Text(title),
+          Icon(icon, size: 22),
+          if (!isCollapsed)
+            Flexible(
+              //  Prevents text from overflowing
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Text(
+                  title,
+                  overflow: TextOverflow.ellipsis, //  truncate if too long
                 ),
+              ),
+            ),
         ],
       ),
     );

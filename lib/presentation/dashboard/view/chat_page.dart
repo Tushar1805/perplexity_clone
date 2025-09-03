@@ -43,7 +43,7 @@ class _ChatPageState extends State<ChatPage> {
           // 👉 Mobile / Tablet layout
           return Scaffold(
             appBar: AppBar(
-              title: const Text("Chat"),
+              title: const Text(""),
             ),
             drawer: const SideBar(), // Sidebar as drawer
             body: _buildMainContent(theme),
