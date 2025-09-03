@@ -8,15 +8,13 @@ class LLMService:
         genai.configure(api_key=settings.GEMINI_API_KEY)
         self.model = genai.GenerativeModel("gemini-2.0-flash-exp")
 
-    async def generate_response(self, query: str, search_results: list[dict]):
+    def generate_response(self, query: str, search_results: list[dict]):
         # context from web search
         context_text = "\n\n".join([
             f"Source {i+1} ({result['url']}): \n{result['content']}"
             for i, result in enumerate(search_results)
         ])
 
-        # print("****************")
-        # print(context_text)
 
         full_prompt = f"""
         Context from web search:
@@ -28,10 +26,9 @@ class LLMService:
         Think and reason deeply. Ensure it answers the query the user is asking. Do not use your knowledge until it is absolutely necessary.
         """
 
-        print("****************")
-        print(full_prompt)
 
-        # ✅ use async call
-        response = await self.model.generate_content_async(full_prompt)
+        response = self.model.generate_content(full_prompt, stream=True)
 
-        return response.text
+        for chunk in response:
+            yield chunk.text
+
