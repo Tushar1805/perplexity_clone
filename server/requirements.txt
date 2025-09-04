@@ -9,3 +9,4 @@ sentence_transformers
 trafilatura
 tavily-python
 pydantic_settings
+google-generativeai 
