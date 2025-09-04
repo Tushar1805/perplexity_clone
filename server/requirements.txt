@@ -1,0 +1,11 @@
+fastapi
+"fastapi[standard]"
+uvicorn
+python-dotenv
+sqlalchemy
+pydantic
+numpy
+sentence_transformers
+trafilatura
+tavily-python
+pydantic_settings
