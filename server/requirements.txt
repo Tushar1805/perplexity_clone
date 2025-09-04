@@ -1,5 +1,5 @@
 fastapi
-"fastapi[standard]"
+fastapi[standard]
 uvicorn
 python-dotenv
 sqlalchemy
