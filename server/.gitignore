@@ -1,0 +1,14 @@
+/server/.env
+# Ignore Python venv
+venv/
+server/venv/
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore system files
+.DS_Store
+Thumbs.db
