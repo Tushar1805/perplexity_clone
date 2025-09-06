@@ -17,6 +17,8 @@ This project was created to sharpen skills in **Streams** & **WebSockets** — t
     - [Create \& activate virtualenv](#create--activate-virtualenv)
     - [Install dependencies](#install-dependencies)
     - [Run the server](#run-the-server)
+      - [1. Tavily API Key](#1-tavily-api-key)
+      - [2. Google Gemini API Key](#2-google-gemini-api-key)
   - [📱 Connecting mobile devices](#-connecting-mobile-devices)
     - [A. Physical Android device (USB)](#a-physical-android-device-usb)
     - [B. Android Emulator](#b-android-emulator)
@@ -133,6 +135,23 @@ If you prefer the FastAPI CLI and it's available:
 ```bash
 fastapi dev main.py
 ```
+
+**API keys setup (Tavily & Google Gemini)**
+
+This project requires external API keys for Tavily (search) and Google Gemini (LLM) integrations.
+
+#### 1. Tavily API Key
+
+- Go to `Tavily` and sign up.
+- Create a new project and generate an API key.
+- Copy the key (e.g., tvly-dev-...).
+
+#### 2. Google Gemini API Key
+
+- Go to Google AI Studio or the `Google Cloud Console`.
+- Enable `Generative Language API`.
+- Create credentials → API key.
+- Copy the key (starts with AIza...).
 
 **What to expect**
 
