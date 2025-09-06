@@ -68,7 +68,7 @@ class _SourcesSectionState extends State<SourcesSection> {
             runSpacing: 16,
             children: searchResults.map((res) {
               return Container(
-                width: 150,
+                width: 140,
                 padding: EdgeInsets.all(16),
                 decoration: BoxDecoration(
                   color: AppColors.cardColor,

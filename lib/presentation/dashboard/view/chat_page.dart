@@ -16,6 +16,29 @@ class ChatPage extends StatefulWidget {
 }
 
 class _ChatPageState extends State<ChatPage> {
+   final ScrollController _scrollController = ScrollController();
+
+    @override
+  void initState() {
+    super.initState();
+    // Listen to rebuilds and auto-scroll
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
@@ -55,6 +78,7 @@ class _ChatPageState extends State<ChatPage> {
 
   Widget _buildMainContent(TextTheme theme) {
     return SingleChildScrollView(
+      controller: _scrollController, // control here
       child: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
@@ -68,6 +92,7 @@ class _ChatPageState extends State<ChatPage> {
             const SourcesSection(),
             const SizedBox(height: 24),
             const AnswerSection(),
+            const SizedBox(height: 24),
           ],
         ),
       ),

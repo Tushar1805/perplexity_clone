@@ -29,18 +29,6 @@ class _AnswerSectionState extends State<AnswerSection> {
 
   X (formerly Twitter): Acquired in 2022, renamed in 2023, and implemented notable changes in social media engagement.
 
-  PayPal (originally X.com): Cofounder of the online payments company, later sold to eBay.
-
-  Other ventures include Neuralink (neurotechnology), the Boring Company (tunneling), OpenAI (artificial intelligence), and xAI.
-
-  Cultural Impact and Notable Achievements
-  Musk is also known for public commentary and political involvement, serving briefly in governmental advisory roles.
-
-  He holds the title of the world’s wealthiest individual, with much of his wealth derived from Tesla and SpaceX stock.
-
-  Musk has had significant influence in technology, transportation, space exploration, and artificial intelligence fields.
-
-
   """;
 
   @override
@@ -74,7 +62,9 @@ class _AnswerSectionState extends State<AnswerSection> {
           child: Markdown(
             data: fullResponse,
             shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
             styleSheet: MarkdownStyleSheet.fromTheme(darkTheme).copyWith(
+                textScaler: TextScaler.linear(0.9),
                 codeblockDecoration: BoxDecoration(
                   color: AppColors.cardColor,
                   borderRadius: BorderRadius.circular(10),

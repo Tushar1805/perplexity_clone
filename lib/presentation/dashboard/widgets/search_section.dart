@@ -47,7 +47,7 @@ class _SearchSectionState extends State<SearchSection> {
                 padding: const EdgeInsets.all(16.0),
                 child: TextField(
                   controller: queryController,
-                  style: theme.bodyMedium,
+                  style: theme.bodyMedium?.copyWith(fontSize: 16),
                   decoration: InputDecoration(
                       hintText: "Search anything...",
                       hintStyle: theme.bodyMedium?.copyWith(color: AppColors.textGrey),

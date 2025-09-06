@@ -89,7 +89,7 @@ class _PerplexityCloneState extends State<PerplexityClone> {
                   routerConfig: router,
                   builder: (context, child) {
                     return MediaQuery(
-                      data: MediaQuery.of(context).copyWith(textScaler: TextScaler.linear(.8)),
+                      data: MediaQuery.of(context).copyWith(textScaler: TextScaler.linear(.9)),
                       child: child!,
                     );
                   },
